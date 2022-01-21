@@ -1,4 +1,4 @@
-package com.juansaldana.ejerciciospringpostgreqsl.models;
+package com.juansaldana.ejerciciospringpostgreqsl.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

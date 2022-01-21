@@ -1,7 +1,7 @@
 package com.juansaldana.ejerciciospringpostgreqsl.service;
 
-import com.juansaldana.ejerciciospringpostgreqsl.models.Autor;
-import com.juansaldana.ejerciciospringpostgreqsl.repository.AutorRepository;
+import com.juansaldana.ejerciciospringpostgreqsl.domain.Autor;
+import com.juansaldana.ejerciciospringpostgreqsl.infraestructure.repository.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,5 +23,9 @@ public class AutorService {
 
     public Autor guardarAutor(Autor autor) {
         return autorRepository.save(autor);
+    }
+
+    public void eliminarAutorPorId(Integer id){
+        autorRepository.deleteById(id);
     }
 }

@@ -1,6 +1,6 @@
-package com.juansaldana.ejerciciospringpostgreqsl.controllers;
+package com.juansaldana.ejerciciospringpostgreqsl.infraestructure.controllers;
 
-import com.juansaldana.ejerciciospringpostgreqsl.models.Autor;
+import com.juansaldana.ejerciciospringpostgreqsl.domain.Autor;
 import com.juansaldana.ejerciciospringpostgreqsl.service.AutorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
