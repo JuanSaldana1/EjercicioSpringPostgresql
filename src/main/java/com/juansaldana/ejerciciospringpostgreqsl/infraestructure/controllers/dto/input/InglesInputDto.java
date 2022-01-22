@@ -1,6 +1,8 @@
 package com.juansaldana.ejerciciospringpostgreqsl.infraestructure.controllers.dto.input;
 
-public class EspanolInputDto {
+import javax.persistence.Entity;
+
+public class InglesInputDto {
     private String palabra;
-    private String descripcion;
+    private String palabraEspanol;
 }
