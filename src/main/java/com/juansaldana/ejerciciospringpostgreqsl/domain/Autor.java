@@ -1,27 +1,24 @@
 package com.juansaldana.ejerciciospringpostgreqsl.domain;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Component
-@NoArgsConstructor
-@AllArgsConstructor
 @Data
 @Entity
 @Table
 public class Autor {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
 
-    private String nombre;
-    private String pais;
-    private String poblacion;
+  private String nombre;
+  private String pais;
+  private String poblacion;
 
-    /*@OneToMany
-    List<Editorial> editoriales;*/
+  @JsonBackReference @OneToMany List<Editorial> editoriales;
 }

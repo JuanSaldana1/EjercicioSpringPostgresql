@@ -42,7 +42,7 @@ public class EditorialController {
     // Eliminar editorial por id
     @DeleteMapping("/deleteEditorial/{id}")
     public ResponseEntity<Response> deleteEditorial(@PathVariable Integer id) {
-        editorialService.eliminarEditorial(id);
+        editorialService.eliminarEditorialPorId(id);
         return new ResponseEntity<>(Response.noErrorResponse(), HttpStatus.OK);
     }
 }

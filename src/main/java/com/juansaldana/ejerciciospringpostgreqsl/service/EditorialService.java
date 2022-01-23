@@ -26,7 +26,7 @@ public class EditorialService {
         return editorialRepository.save(editorial);
     }
 
-    public void eliminarEditorial(Integer id){
+    public void eliminarEditorialPorId(Integer id){
         editorialRepository.deleteById(id);
     }
 }

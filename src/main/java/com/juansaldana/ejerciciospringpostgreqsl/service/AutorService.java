@@ -25,7 +25,14 @@ public class AutorService {
         return autorRepository.save(autor);
     }
 
-    public void eliminarAutorPorId(Integer id){
+    public void eliminarAutorPorId(Integer id) {
         autorRepository.deleteById(id);
+    }
+
+    // Modificar autor por id
+    public Autor modifyAutor(Integer id, Autor newAutor) {
+        Autor autor = autorRepository.getReferenceById(id);
+        newAutor.setId(autor.getId());
+        return autorRepository.save(newAutor);
     }
 }
