@@ -12,37 +12,39 @@ import java.util.List;
 
 @RestController
 public class EditorialController {
-    @Autowired
-    private EditorialService editorialService;
+  @Autowired private EditorialService editorialService;
 
-    // Añadir editorial
-    @PostMapping(path = "/addEditorial", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Editorial> addEditorial(@RequestBody Editorial newEditorial) {
-        Editorial addedEditorial = editorialService.guardarEditorial(newEditorial);
-        return new ResponseEntity<>(addedEditorial, HttpStatus.OK);
-    }
+  // Añadir editorial
+  @PostMapping(
+      path = "/addEditorial",
+      consumes = MediaType.APPLICATION_JSON_VALUE,
+      produces = MediaType.APPLICATION_JSON_VALUE)
+  public ResponseEntity<Editorial> addEditorial(@RequestBody Editorial newEditorial) {
+    Editorial addedEditorial = editorialService.guardarEditorial(newEditorial);
+    return new ResponseEntity<>(addedEditorial, HttpStatus.OK);
+  }
 
-    // Mostrar todas las editoriales
-    @GetMapping("/getAllEditoriales")
-    public ResponseEntity<List<Editorial>> getAll() {
-        List<Editorial> editoriales;
-        editoriales = editorialService.findAll();
-        return new ResponseEntity<>(editoriales, HttpStatus.OK);
-    }
+  // Mostrar todas las editoriales
+  @GetMapping("/getAllEditoriales")
+  public ResponseEntity<List<Editorial>> getAll() {
+    List<Editorial> editoriales;
+    editoriales = editorialService.findAll();
+    return new ResponseEntity<>(editoriales, HttpStatus.OK);
+  }
 
-    // Mostrar editorial por id
-    @GetMapping("/getEditorial/{id}")
-    public ResponseEntity<Editorial> findById(@PathVariable Integer id) {
-        Editorial editorial = editorialService.findById(id);
-        return new ResponseEntity<>(editorial, HttpStatus.OK);
-    }
+  // Mostrar editorial por id
+  @GetMapping("/getEditorial/{id}")
+  public ResponseEntity<Editorial> findById(@PathVariable Integer id) {
+    Editorial editorial = editorialService.findById(id);
+    return new ResponseEntity<>(editorial, HttpStatus.OK);
+  }
 
-    // Editar editorial
+  // Editar editorial
 
-    // Eliminar editorial por id
-    @DeleteMapping("/deleteEditorial/{id}")
-    public ResponseEntity<Response> deleteEditorial(@PathVariable Integer id) {
-        editorialService.eliminarEditorialPorId(id);
-        return new ResponseEntity<>(Response.noErrorResponse(), HttpStatus.OK);
-    }
+  // Eliminar editorial por id
+  @DeleteMapping("/deleteEditorial/{id}")
+  public ResponseEntity<Response> deleteEditorial(@PathVariable Integer id) {
+    editorialService.eliminarEditorialPorId(id);
+    return new ResponseEntity<>(Response.noErrorResponse(), HttpStatus.OK);
+  }
 }
