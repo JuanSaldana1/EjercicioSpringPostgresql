@@ -3,6 +3,6 @@ package com.juansaldana.ejerciciospringpostgreqsl.infraestructure.controllers.dt
 import javax.persistence.Entity;
 
 public class InglesInputDto {
-    private String palabra;
-    private String palabraEspanol;
+  private String palabra;
+  private String palabraEspanol;
 }

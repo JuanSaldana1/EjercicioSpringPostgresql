@@ -13,10 +13,9 @@ import java.util.Date;
 @Data
 @Entity
 public class InglesSimpleOutputDto {
-    @Id
-    private int id;
+  @Id private int id;
 
-    private String palabra;
-    private Date fechaAlta;
-    private Date fechaModificacion;
+  private String palabra;
+  private Date fechaAlta;
+  private Date fechaModificacion;
 }

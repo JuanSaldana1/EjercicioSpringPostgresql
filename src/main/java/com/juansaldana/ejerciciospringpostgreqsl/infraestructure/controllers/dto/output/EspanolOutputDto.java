@@ -14,13 +14,12 @@ import java.util.List;
 @Data
 @Entity
 public class EspanolOutputDto {
-    @Id
-    private int id;
+  @Id private int id;
 
-    private String palabra;
-    private String descripcion;
-    private Date fechaAlta;
-    private Date fechaModificacion;
+  private String palabra;
+  private String descripcion;
+  private Date fechaAlta;
+  private Date fechaModificacion;
 
-    //private List<InglesSimpleOutputDto> palabrasIngles;
+  // private List<InglesSimpleOutputDto> palabrasIngles;
 }

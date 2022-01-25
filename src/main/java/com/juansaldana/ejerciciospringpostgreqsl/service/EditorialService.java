@@ -5,28 +5,26 @@ import com.juansaldana.ejerciciospringpostgreqsl.infraestructure.repository.Edit
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
 public class EditorialService {
-    @Autowired
-    private EditorialRepository editorialRepository;
+  @Autowired private EditorialRepository editorialRepository;
 
-    public List<Editorial> findAll() {
-        return editorialRepository.findAll();
-    }
+  public List<Editorial> findAll() {
+    return editorialRepository.findAll();
+  }
 
-    public Editorial findById(Integer id) {
-        return editorialRepository.findById(id).orElseThrow(NoSuchElementException::new);
-    }
+  public Editorial findById(Integer id) {
+    return editorialRepository.findById(id).orElseThrow(NoSuchElementException::new);
+  }
 
-    public Editorial guardarEditorial(Editorial editorial) {
-        return editorialRepository.save(editorial);
-    }
+  public Editorial guardarEditorial(Editorial editorial) {
+    return editorialRepository.save(editorial);
+  }
 
-    public void eliminarEditorial(Integer id){
-        editorialRepository.deleteById(id);
-    }
+  public void eliminarEditorialPorId(Integer id) {
+    editorialRepository.deleteById(id);
+  }
 }
