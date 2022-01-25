@@ -1,13 +1,15 @@
 package com.juansaldana.ejerciciospringpostgreqsl.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Component
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 @Table
@@ -20,7 +22,6 @@ public class Autor {
     private String pais;
     private String poblacion;
 
-    @JsonBackReference
-    @OneToMany
-    List<Editorial> editoriales;
+    /*@OneToMany
+    List<Editorial> editoriales;*/
 }

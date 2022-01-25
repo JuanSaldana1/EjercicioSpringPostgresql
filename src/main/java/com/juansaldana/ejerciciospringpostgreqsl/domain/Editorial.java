@@ -1,6 +1,5 @@
 package com.juansaldana.ejerciciospringpostgreqsl.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -8,12 +7,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
-@Table
 public class Editorial {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +21,7 @@ public class Editorial {
     private int numeroPaginas;
     private Date fechaPublicacion;
 
-    /*@JsonBackReference
     @OneToMany
-    private List<DiccionarioEspanolIngles> diccionarios = new ArrayList<>();*/
+    @ToString.Exclude
+    private List<DiccionarioEspanolIngles> diccionarios = new ArrayList<>();
 }
